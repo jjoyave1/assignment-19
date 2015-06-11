@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project Name</title>
+  <title>Tacts.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/vendor/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-  <div class="container">
+  <main>
+
+  <h1>Tacts.</h1>
+
+  <div class="formWrap">
+
+    <form>
+
+      <div class="nameWrap">
+      <label>First Name:</label>
+      <input type="text" placeholder="Enter first name." id = "first-name">
+
+      <label>Last Name:</label>
+      <input type="text" placeholder="Enter last name." id = "last-name">
+      </div>
+
+      <div class="telWrap">
+      <label>Phone Number:</label>
+        <input type="numeric" max = "999" placeholder="###" id = "area-code" class = "areaCode">
+        <input type="numeric" max = "9999" placeholder="####" id = "first-digits" class = "firstDigits">
+        <input type="numeric" max = "9999" placeholder="####" id = "last-digits" class = "lastDigits">
+      </div>
+
+      <label>Email:</label>
+      <input type="text" name="email" placeholder="name@url.com" pattern="*" id = "contact-email">
+
+      <button id="add-contact">Submit</button>
+
+    </form>
+
+    <ul id="contacts" class = "contactsBox"></ul>
 
   </div>
+
+
+  </main>
 
   <!-- VENDOR -->
   <script src="js/vendor/jquery.js"></script>
@@ -21,7 +54,7 @@
   <!-- TEMPLATES -->
   <script src="js/templates.js"></script>
   <!-- MAIN -->
-  <script src="js/model/main.model.js"></script>
+  <script src="js/models/main.model.js"></script>
   <script src="js/collections/main.collection.js"></script>
   <script src="js/main.js"></script>
 
