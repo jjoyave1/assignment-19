@@ -1,7 +1,7 @@
 var Contact = Backbone.Model.extend({
 
   initialize: function() {
-    this.logName();
+    this.logLastName();
   },
 
   idAttribute: '_id',
@@ -9,7 +9,8 @@ var Contact = Backbone.Model.extend({
   defaults: {
     name: '',
     phone: '',
-    email: ''
+    email: '',
+    lastName: ''
   },
 
   logName: function() {
@@ -23,5 +24,9 @@ var Contact = Backbone.Model.extend({
   logEmail: function() {
     console.log(this.get('email'));
   },
+
+  logLastName: function() {
+    console.log(this.get('lastName'));
+  }
 
 });

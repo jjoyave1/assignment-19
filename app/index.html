@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tacts.</title>
+  <title>tacts.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/vendor/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+
+
+  <!-- fonts -->
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans|Roboto" rel="stylesheet" type="text/css">
 </head>
 <body>
 
+  <aside>
+    <h4>Functionality:</h4>
+    <div class="lastSort" id="sort-by-last"><a href="#">Sort by Last Name</a></div>
+    <div class="firstSort" id="sort-by-first"><a href="#">Sort by First Name</a></div>
+    <div class="delCommand" id="delete-radio"><a href="#">Delete Selected</a></div>
+  </aside>
+
   <main>
 
-  <h1>Tacts.</h1>
 
-  <div class="formWrap">
+  <div class = "bg"><span class="bgspan">tacts.</span>
 
-    <form>
 
-      <div class="nameWrap">
-      <label>First Name:</label>
-      <input type="text" placeholder="Enter first name." id = "first-name">
+    <div class="formWrap">
 
-      <label>Last Name:</label>
-      <input type="text" placeholder="Enter last name." id = "last-name">
-      </div>
+      <form id="add-contact">
 
-      <div class="telWrap">
-      <label>Phone Number:</label>
-        <input type="numeric" max = "999" placeholder="###" id = "area-code" class = "areaCode">
-        <input type="numeric" max = "9999" placeholder="####" id = "first-digits" class = "firstDigits">
-        <input type="numeric" max = "9999" placeholder="####" id = "last-digits" class = "lastDigits">
-      </div>
+        <div class="nameWrap">
+        <label>First Name:</label>
+        <input type="text" placeholder="Enter first name." id = "first-name" class="firstName" maxlength="19">
 
-      <label>Email:</label>
-      <input type="text" name="email" placeholder="name@url.com" pattern="*" id = "contact-email">
+        <label>Last Name:</label>
+        <input type="text" placeholder="Enter last name." id = "last-name" class="lastName" maxlength="19">
+        </div>
 
-      <button id="add-contact">Submit</button>
+        <div class="telWrap">
+        <label>Phone Number:</label>
+          <input type="numeric" max = "999" maxlength="3" placeholder="###" id = "area-code" class = "areaCode">
+          <input type="numeric" max = "9999" maxlength="3" placeholder="####" id = "first-digits" class = "firstDigits">
+          <input type="numeric" max = "9999" maxlength="4" placeholder="####" id = "last-digits" class = "lastDigits">
+        </div>
 
-    </form>
+        <label>Email:</label>
+        <input type="text" name="email" placeholder="name@url.com" pattern="*" id = "contact-email" class="contactEmail" maxlength="19">
 
-    <ul id="contacts" class = "contactsBox"></ul>
+        <input type="submit" class="subBtn" value="Submit">
+
+      </form>
+
+      <section><ul id="contacts" class = "contactsBox"></ul></section>
+
+    </div>
 
   </div>
-
-
   </main>
 
   <!-- VENDOR -->
