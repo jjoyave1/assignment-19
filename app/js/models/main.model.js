@@ -10,7 +10,8 @@ var Contact = Backbone.Model.extend({
     name: '',
     phone: '',
     email: '',
-    lastName: ''
+    lastName: '',
+    firstName: ''
   },
 
   logName: function() {

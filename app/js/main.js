@@ -81,15 +81,66 @@ var addContactToHTML = function (contact) {
   $('#contacts').prepend(contactHTML);
 };
 
+// adding after sort
+var addContactSort = function (contact) {
+  var contactHTML = "<li id='" + contact._id + "'>";
+      contactHTML += "<div class='contactWrap'>";
+      contactHTML += "<span class ='contactName'>" + contact.name + "</span>";
+      contactHTML += "<span class ='contactPhone'>" + "<a href='#'>" + contact.phone + "</a>" + "</span>";
+      contactHTML += "<span class ='contactEmail'>" + "<a href='#'>" + contact.email + "</a>" + "</span>";
+      contactHTML += "<span id='del-btn' class='hidden delBtn'>&nbsp;&times;&nbsp;</span>";
+      contactHTML += "</div>";
+      contactHTML += "</li>";
+
+  $('#contacts').append(contactHTML);
+};
+// sort handlers
+$('#sort-by-last').on('click', function() {
+
+  allContacts.sortByField('lastName');
+
+  $('#contacts').html('');
+
+  allContacts.each (function(x) {
+    addContactSort(x.attributes);
+  });
+
+});
+
+$('#sort-by-first').on('click', function() {
+
+  allContacts.sortByField('firstName');
+
+  console.log(allContacts);
+
+  $('#contacts').html('');
+
+  allContacts.each (function(x) {
+    addContactSort(x.attributes);
+  });
+
+});
+
+
  // Submit Handler
 $('#add-contact').on('submit', addContact);
 
 // Delete Handlers
 $('#contacts').on('click', '#del-btn', deleteContact);
 
-$('#contacts').on('mouseenter', 'li', function(){
-  $('#del-btn').removeClass('hidden');
-  $(this).on('mouseleave', function(){
-    $('#del-btn').addClass('hidden');
+$('#contacts').on('mouseenter', 'div', function(){
+  $(this).find('span:nth-child(4)').removeClass('hidden');
+  $(this).parent().on('mouseleave', function(){
+    $(this).find('span:nth-child(4)').addClass('hidden');
   });
+});
+
+// Link handlers
+$("#sort-by-last").on('click', function() {
+  $(this).addClass('clicked');
+  $("#sort-by-first").removeClass('clicked');
+});
+$("#sort-by-first").on('click', function() {
+  $(this).addClass('clicked');
+  $("#sort-by-last").removeClass('clicked');
 });

@@ -27,9 +27,17 @@ aside {
   width: 18.96686%;
   margin-right: 0;
   display: inline-block;
-  margin-left: -95px; }
+  margin-left: -95px;
+  border-right: solid 1px #E5E5E5; }
   aside:last-child {
     margin-right: 0; }
+  aside h4 {
+    font-family: "Open Sans", sans-serif; }
+  aside .sidebarLinks {
+    text-decoration: none;
+    font-family: "Roboto", sans-serif; }
+  aside .sidebarLinks:hover {
+    text-decoration: underline; }
 
 .bg {
   float: left;
@@ -63,20 +71,27 @@ aside {
   background-color: lightgrey;
   z-index: 10;
   position: absolute;
-  top: 30px;
+  top: 15px;
   opacity: 0.9;
   box-shadow: 2px -2px 5px 0px #C6C4BA;
   border-radius: 4px; }
   .formWrap:last-child {
     margin-right: 0; }
+  .formWrap form {
+    margin-bottom: 15px;
+    padding-top: 10px; }
 
 .firstName, .lastName, .contactEmail, .subBtn {
   outline: none; }
 
+.formHeader {
+  text-align: left;
+  margin: 0 0 5px 120px; }
+
 .telWrap {
   height: 25px;
-  width: auto;
-  display: block; }
+  width: 38%;
+  display: inline-block; }
   .telWrap .areaCode {
     width: 35px;
     height: auto;
@@ -104,8 +119,9 @@ section {
   width: 675px;
   overflow: scroll;
   background-color: #B5FDFE;
-  margin-left: 44.5px;
-  border-radius: 4px; }
+  margin-left: 46.5px;
+  border-radius: 4px;
+  box-shadow: 1px -1px 1px 0px #808080; }
 
 .contactsBox {
   border-radius: 4px;
@@ -160,12 +176,15 @@ section {
       cursor: pointer;
       color: #F6FEEF;
       margin-right: 5px;
-      margin-top: 2.5px;
+      margin-top: 3.5px;
       transition: all 2s ease; }
   .contactsBox .contactWrap {
     height: auto;
-    width: auto;
+    width: 100%;
     margin-top: 5px; }
 
 .hidden {
   display: none; }
+
+.clicked {
+  font-weight: bolder; }
