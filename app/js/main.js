@@ -53,8 +53,9 @@ var addContact = function(a) {
 // Remove a contact
 
 var url = 'http://tiy-515.herokuapp.com/collections/joyave_contacts';
+
 var deleteContact = function(a) {
-  var contactToDelete = $(this).parent(),
+  var contactToDelete = $(this).parent().parent(),
       id2Delete = contactToDelete.attr('id');
 
   $.ajax({
@@ -128,10 +129,11 @@ $('#add-contact').on('submit', addContact);
 // Delete Handlers
 $('#contacts').on('click', '#del-btn', deleteContact);
 
-$('#contacts').on('mouseenter', 'div', function(){
-  $(this).find('span:nth-child(4)').removeClass('hidden');
-  $(this).parent().on('mouseleave', function(){
-    $(this).find('span:nth-child(4)').addClass('hidden');
+$('#delete-radio').on('click', function() {
+  radioValues.each(function () {
+    if (radioValues.is('checked') === true) {
+      console.log(this.parent());
+    }
   });
 });
 
@@ -143,4 +145,12 @@ $("#sort-by-last").on('click', function() {
 $("#sort-by-first").on('click', function() {
   $(this).addClass('clicked');
   $("#sort-by-last").removeClass('clicked');
+});
+
+// Hovers
+$('#contacts').on('mouseenter', 'div', function(){
+  $(this).find('span:nth-child(4)').removeClass('hidden');
+  $(this).parent().on('mouseleave', function(){
+    $(this).find('span:nth-child(4)').addClass('hidden');
+  });
 });

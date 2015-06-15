@@ -13,16 +13,24 @@
   float: left;
 }
 
+@mixin inputPosition {
+  display: inline-block;
+  text-align: left;
+  float: left;
+  margin-bottom: 4px;
+}
+
 
 //colors
 $bgBlue: #B5FDFE;
 $aqua: #61CC9F;
-$offwht: #F6FEEF;
+$offwht: #F8FFFF;
 $bgRose: #EAE5FE;
 $tin: #808080;
 $fireEngineRed: #C41722;
 $drkred: #5F0B12;
 $asideBorder: #E5E5E5;
+$ltgrey: #D0D7D7;
 
 //fonts
 
@@ -30,7 +38,10 @@ $openSans: 'Open Sans', sans-serif;
 $sansPro: 'Source Sans Pro', sans-serif;
 $roboto: 'Roboto', sans-serif;
 //////////////////////////////////
-
+*{
+  // background-color: $offwht;
+  font-family: $roboto;
+}
 
 body {
   @include outer-container();
@@ -44,18 +55,25 @@ aside {
   height: 615px;
   float: left;
   @include span-columns(2.5);
+  background-color: $offwht;
   margin-right: 0;
   display: inline-block;
   margin-left: -95px;
   border-right: solid 1px $asideBorder;
+  text-align: center;
 
   h4 {
     font-family: $openSans;
+    color: $tin;
+    font-weight: bolder;
+    font-size: 1.1em;
+    text-align: left;
   }
 
   .sidebarLinks {
     text-decoration: none;
     font-family: $roboto;
+    color: $tin;
   }
 
   .sidebarLinks:hover {
@@ -91,7 +109,7 @@ aside {
 .formWrap {
   @include span-columns(9.5);
   @include shift(1.15);
-  background-color: lightgrey;
+  background-color: $offwht;
   z-index: 10;
   position: absolute;
   top: 15px;
@@ -102,6 +120,11 @@ aside {
   form {
     margin-bottom: 15px;
     padding-top: 10px;
+
+    label {
+      color: $tin;
+      font-weight: lighter;
+    }
   }
 }
 
@@ -110,13 +133,24 @@ aside {
 }
 .formHeader{
   text-align: left;
-  margin: 0 0 5px 120px;
+  margin: 0 0 5px 50px;
+  color: $tin;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.15em;
+}
 
+.nameWrap {
+  height: 25px;
+  width: 74%;
+  margin-left: 50px;
+  @include inputPosition();
 }
 .telWrap {
   height: 25px;
   width: 38%;
-  display: inline-block;
+  @include inputPosition();
+  margin-left: 50px;
 
   .areaCode {
     width: 35px;
@@ -139,7 +173,12 @@ aside {
     @include inputBox();
   }
 }
-
+.emailWrap {
+  height: 25px;
+  width: 38%;
+  @include inputPosition();
+  margin-left: 8px;
+}
 .subBtn {
   background-color: $bgBlue;
   border: solid 1px $aqua;
@@ -150,7 +189,7 @@ section {
   height: 480px;
   width: 675px;
   overflow: scroll;
-  background-color: $bgBlue;
+  background-color: $ltgrey;
   margin-left: 46.5px;
   border-radius: 4px;
   box-shadow: 1px -1px 1px 0px $tin;
@@ -183,7 +222,8 @@ section {
       @include infoBox();
 
       a {
-        text-decoration: none
+        text-decoration: none;
+        color: $tin;
       }
 
       a:hover{
@@ -195,7 +235,8 @@ section {
       @include infoBox();
 
       a {
-        text-decoration: none
+        text-decoration: none;
+        color: $aqua;
       }
 
       a:hover{
@@ -215,6 +256,7 @@ section {
       color: $offwht;
       margin-right: 5px;
       margin-top: 3.5px;
+      padding-left: 0.5px;
       transition: all 2s ease;
     }
   }
@@ -222,6 +264,13 @@ section {
     height: auto;
     width: 100%;
     margin-top: 5px;
+
+    input {
+      float: left;
+      margin-left: 8px;
+      margin-top: 2px;
+      border-right: solid 1px $tin;
+    }
   }
 }
 // //
@@ -231,5 +280,5 @@ section {
 }
 
 .clicked {
-  font-weight: bolder;
+  font-weight: bold;
 }

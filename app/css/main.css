@@ -6,6 +6,9 @@ html {
 *::before {
   box-sizing: inherit; }
 
+* {
+  font-family: "Roboto", sans-serif; }
+
 body {
   max-width: 68em;
   margin-left: auto;
@@ -25,17 +28,24 @@ aside {
   display: block;
   margin-right: 2.35765%;
   width: 18.96686%;
+  background-color: #F8FFFF;
   margin-right: 0;
   display: inline-block;
   margin-left: -95px;
-  border-right: solid 1px #E5E5E5; }
+  border-right: solid 1px #E5E5E5;
+  text-align: center; }
   aside:last-child {
     margin-right: 0; }
   aside h4 {
-    font-family: "Open Sans", sans-serif; }
+    font-family: "Open Sans", sans-serif;
+    color: #808080;
+    font-weight: bolder;
+    font-size: 1.1em;
+    text-align: left; }
   aside .sidebarLinks {
     text-decoration: none;
-    font-family: "Roboto", sans-serif; }
+    font-family: "Roboto", sans-serif;
+    color: #808080; }
   aside .sidebarLinks:hover {
     text-decoration: underline; }
 
@@ -68,7 +78,7 @@ aside {
   margin-right: 2.35765%;
   width: 78.67549%;
   margin-left: 9.80927%;
-  background-color: lightgrey;
+  background-color: #F8FFFF;
   z-index: 10;
   position: absolute;
   top: 15px;
@@ -80,18 +90,38 @@ aside {
   .formWrap form {
     margin-bottom: 15px;
     padding-top: 10px; }
+    .formWrap form label {
+      color: #808080;
+      font-weight: lighter; }
 
 .firstName, .lastName, .contactEmail, .subBtn {
   outline: none; }
 
 .formHeader {
   text-align: left;
-  margin: 0 0 5px 120px; }
+  margin: 0 0 5px 50px;
+  color: #808080;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.15em; }
+
+.nameWrap {
+  height: 25px;
+  width: 74%;
+  margin-left: 50px;
+  display: inline-block;
+  text-align: left;
+  float: left;
+  margin-bottom: 4px; }
 
 .telWrap {
   height: 25px;
   width: 38%;
-  display: inline-block; }
+  display: inline-block;
+  text-align: left;
+  float: left;
+  margin-bottom: 4px;
+  margin-left: 50px; }
   .telWrap .areaCode {
     width: 35px;
     height: auto;
@@ -108,6 +138,15 @@ aside {
     display: inline-block;
     outline: none; }
 
+.emailWrap {
+  height: 25px;
+  width: 38%;
+  display: inline-block;
+  text-align: left;
+  float: left;
+  margin-bottom: 4px;
+  margin-left: 8px; }
+
 .subBtn {
   background-color: #B5FDFE;
   border: solid 1px #61CC9F;
@@ -118,7 +157,7 @@ section {
   height: 480px;
   width: 675px;
   overflow: scroll;
-  background-color: #B5FDFE;
+  background-color: #D0D7D7;
   margin-left: 46.5px;
   border-radius: 4px;
   box-shadow: 1px -1px 1px 0px #808080; }
@@ -128,7 +167,7 @@ section {
   padding: 0 4px 0 4px; }
   .contactsBox li {
     border: solid 1px #61CC9F;
-    background-color: #F6FEEF;
+    background-color: #F8FFFF;
     border-radius: 4px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -138,7 +177,7 @@ section {
     .contactsBox li span {
       font-style: "Roboto", sans-serif;
       font-weight: lighter;
-      background-color: #F6FEEF; }
+      background-color: #F8FFFF; }
     .contactsBox li .contactName {
       width: 25%;
       padding-right: 15px;
@@ -152,7 +191,8 @@ section {
       display: inline-block;
       float: left; }
       .contactsBox li .contactPhone a {
-        text-decoration: none; }
+        text-decoration: none;
+        color: #808080; }
       .contactsBox li .contactPhone a:hover {
         text-decoration: underline; }
     .contactsBox li .contactEmail {
@@ -162,7 +202,8 @@ section {
       display: inline-block;
       float: left; }
       .contactsBox li .contactEmail a {
-        text-decoration: none; }
+        text-decoration: none;
+        color: #61CC9F; }
       .contactsBox li .contactEmail a:hover {
         text-decoration: underline; }
     .contactsBox li .delBtn {
@@ -174,17 +215,23 @@ section {
       font-size: 7px;
       border-radius: 2px;
       cursor: pointer;
-      color: #F6FEEF;
+      color: #F8FFFF;
       margin-right: 5px;
       margin-top: 3.5px;
+      padding-left: 0.5px;
       transition: all 2s ease; }
   .contactsBox .contactWrap {
     height: auto;
     width: 100%;
     margin-top: 5px; }
+    .contactsBox .contactWrap input {
+      float: left;
+      margin-left: 8px;
+      margin-top: 2px;
+      border-right: solid 1px #808080; }
 
 .hidden {
   display: none; }
 
 .clicked {
-  font-weight: bolder; }
+  font-weight: bold; }
