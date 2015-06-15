@@ -72,6 +72,7 @@ var deleteContact = function(a) {
 var addContactToHTML = function (contact) {
   var contactHTML = "<li id='" + contact._id + "'>";
       contactHTML += "<div class='contactWrap'>";
+      contactHTML += "<input type=checkbox>";
       contactHTML += "<span class ='contactName'>" + contact.name + "</span>";
       contactHTML += "<span class ='contactPhone'>" + "<a href='#'>" + contact.phone + "</a>" + "</span>";
       contactHTML += "<span class ='contactEmail'>" + "<a href='#'>" + contact.email + "</a>" + "</span>";
@@ -86,6 +87,7 @@ var addContactToHTML = function (contact) {
 var addContactSort = function (contact) {
   var contactHTML = "<li id='" + contact._id + "'>";
       contactHTML += "<div class='contactWrap'>";
+      contactHTML += "<input type=checkbox>";
       contactHTML += "<span class ='contactName'>" + contact.name + "</span>";
       contactHTML += "<span class ='contactPhone'>" + "<a href='#'>" + contact.phone + "</a>" + "</span>";
       contactHTML += "<span class ='contactEmail'>" + "<a href='#'>" + contact.email + "</a>" + "</span>";
@@ -129,10 +131,19 @@ $('#add-contact').on('submit', addContact);
 // Delete Handlers
 $('#contacts').on('click', '#del-btn', deleteContact);
 
-$('#delete-radio').on('click', function() {
-  radioValues.each(function () {
-    if (radioValues.is('checked') === true) {
-      console.log(this.parent());
+$('#delete-checked').on('click', function() {
+  var deleteChecked = $('.contactWrap').find('input[type=checkbox]');
+  var contactToDelete = deleteChecked.parent();
+  var id2Delete = contactToDelete.attr('id');
+
+  deleteChecked.each(function(x){
+    if (x.isChecked) {
+      $.ajax({
+         url: url + "/" + id2Delete,
+         type: "DELETE"
+       }).done(function() {
+         contactToDelete.fadeOut();
+       });
     }
   });
 });
@@ -149,8 +160,8 @@ $("#sort-by-first").on('click', function() {
 
 // Hovers
 $('#contacts').on('mouseenter', 'div', function(){
-  $(this).find('span:nth-child(4)').removeClass('hidden');
+  $(this).find('span:nth-child(5)').removeClass('hidden');
   $(this).parent().on('mouseleave', function(){
-    $(this).find('span:nth-child(4)').addClass('hidden');
+    $(this).find('span:nth-child(5)').addClass('hidden');
   });
 });
