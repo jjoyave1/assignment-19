@@ -1,18 +1,21 @@
-var ContactGroup = Backbone.Collection.extend({
+;(function(){
+  'use strict';
 
-  model: Contact,
+  app.Collections.ContactCollection = Backbone.Collection.extend({
 
-  url: 'http://tiy-515.herokuapp.com/collections/joyave_contacts',
+    model: app.Models.Contact,
 
-  sort_key: '_id', // default sort key
+    url: 'http://tiy-515.herokuapp.com/collections/joyave_contacts',
 
-  comparator: function(item) {
-    return item.get(this.sort_key);
-  },
+    comparator: function(item) {
+    // return item.get(this.sort_key);
+    },
 
-  sortByField: function(fieldName) {
-    this.sort_key = fieldName;
-    this.sort();
-  }
+    sortByField: function(fieldName) {
+    // this.sort_key = fieldName;
+    // this.sort();
+    }
 
-});
+  });
+
+}());
